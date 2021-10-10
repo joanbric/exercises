@@ -1,0 +1,54 @@
+body {
+    font-family: "Ubuntu Mono", monospace;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 6rem;
+    position: relative;
+}
+
+h1::before,
+h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+h1::before {
+    background-color: white;
+    animation: typeWriter 4s steps(27) forwards;
+}
+
+h1::after {
+    width: 0.1em;
+    animation: 
+        typeWriter 4s steps(27) forwards,
+        blink 800ms steps(27) infinite;
+    background-color: black;
+}
+
+@keyframes typeWriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    50%{
+        background: black;
+    }
+    100% {
+        background: transparent;
+    }
+}
+
+h2 {
+    font-size: 2rem;
+}
